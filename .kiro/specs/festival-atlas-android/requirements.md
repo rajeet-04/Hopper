@@ -26,6 +26,9 @@ Hopper(Festival Atlas) is an offline-first Android application that serves as a 
 - **Bhog_Finder**: The subsystem that displays community-reported food distribution and street food locations near pandal zones
 - **Predictive_Crowd**: The subsystem that uses historical crowd data to forecast wait times at pandals
 - **Contributor_Portal**: The Next.js web dashboard where puja committees manage their pandal data
+- **Source_Type**: A classification field indicating the origin of pandal data (committee, volunteer, news, or unknown), used to assess data trustworthiness
+- **Confidence_Level**: A three-tier rating (low, medium, high) indicating the reliability of a data entry based on its source and verification status
+- **Open_Data_Export**: The automated system that generates downloadable GeoJSON and CSV datasets of festival data under CC BY 4.0 license at the end of each festival season
 
 ## Requirements
 
@@ -52,6 +55,7 @@ Hopper(Festival Atlas) is an offline-first Android application that serves as a 
 3. THE Hopper SHALL default the Festival_Toggle to the festival whose dates are nearest to the current calendar date
 4. WHILE Durga Puja is selected, THE Map_Engine SHALL display pandal pins for Kolkata-region pandals only
 5. WHILE Jagaddhatri Puja is selected, THE Map_Engine SHALL display pandal pins for Chandannagar and Krishnanagar-region pandals only
+6. THE Hopper SHALL enforce a global Year context alongside the Festival context; all queries to the Offline_Cache SHALL explicitly filter by both festival and year, defaulting to the current calendar year when no year is explicitly selected by the user
 
 ### Requirement 3: Puja Near Me
 
@@ -268,3 +272,29 @@ Hopper(Festival Atlas) is an offline-first Android application that serves as a 
 5. THE Contributor_Portal SHALL provide a mobile-responsive layout that allows committee members to manage data from a smartphone browser
 6. THE Contributor_Portal SHALL store GPS coordinates via an interactive map pin-drop interface allowing committees to place their pandal location precisely
 7. WHEN moderation approves a submission, THE Contributor_Portal SHALL publish the updated data to the backend within 5 minutes, making it available for synchronization to the Android application's Offline_Cache
+
+### Requirement 20: Data Provenance and Credibility
+
+**User Story:** As a heritage researcher or user, I want to know where the pandal information came from, so that I can trust the historical archive.
+
+#### Acceptance Criteria
+
+1. THE Offline_Cache and the Backend SHALL enforce a Source_Type field (committee, volunteer, news, or unknown) on every historical Edition data entry
+2. THE Offline_Cache and the Backend SHALL enforce a Confidence_Level field (low, medium, or high) on every historical Edition data entry
+3. WHEN a pandal detail card displays Edition data, THE Hopper SHALL show a visual provenance indicator distinguishing "Committee Verified" entries from "Community Sourced" entries
+4. WHEN Edition data is ingested without explicit source attribution, THE Hopper SHALL default the Source_Type to unknown and the Confidence_Level to low
+5. THE Contributor_Portal SHALL require committee members to select a Source_Type when submitting or editing historical Edition entries
+6. THE Hopper SHALL display the Confidence_Level as a visual badge (low, medium, high) on each Edition entry in the archive timeline
+
+### Requirement 21: Open Data Export
+
+**User Story:** As an open-data advocate or student, I want to download the festival dataset, so that I can use it for research without being locked into the Hopper app.
+
+#### Acceptance Criteria
+
+1. THE Open_Data_Export SHALL automatically generate bundled GeoJSON and CSV exports of all public pandal coordinates, themes, artisan credits, awards, committee information, and archival data at the end of each festival season
+2. THE Open_Data_Export SHALL publish all exported data under the Creative Commons Attribution 4.0 International (CC BY 4.0) license
+3. THE Open_Data_Export SHALL version each export file by festival and year using the naming convention {festival}_{year}_pandals.{format} (example: durga_puja_2026_pandals.geojson)
+4. THE Backend SHALL serve Open_Data_Export files via a public download endpoint accessible without authentication
+5. THE Open_Data_Export SHALL include pandal locations, themes, artisan credits, awards, and committee information in every generated export
+6. WHEN a festival season concludes, THE Open_Data_Export SHALL generate and publish the new dataset within 7 days of the final immersion date
