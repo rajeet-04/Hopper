@@ -300,7 +300,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 30: Volunteer post filled threshold** — verify rejection when volunteersSignedUp >= volunteersNeeded
     - **Validates: Requirements 25.1, 25.2, 25.4, 26.4, 26.7**
 
-- [ ] 11. Checkpoint - Ensure all tests pass
+t- [x] 11. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 12. Map engine integration
@@ -397,7 +397,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Overlay live crowd data with higher visual priority when available
     - _Requirements: 18.1, 18.2, 18.3, 18.4, 18.6_
 
-- [ ] 15. Checkpoint - Ensure all tests pass
+- [x] 15. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 16. UI layer - Jagaddhatri Puja features
@@ -475,7 +475,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 29: Volunteer contact access control** — verify contact info not exposed in Android UI
     - **Validates: Requirements 20.4, 23.7, 25.3, 26.5**
 
-- [ ] 18. Checkpoint - Ensure all tests pass
+- [x] 18. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 19. Background sync and WorkManager
@@ -538,10 +538,10 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 31: Ritual guide tithi linkage** — verify linked tithiId references existing tithi in calendar data for same festival
     - **Validates: Requirements 27.6**
 
-- [ ] 22. Checkpoint - Ensure all tests pass
+- [x] 22. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 23. Integration testing and final validation
+- [x] 23. Integration testing and final validation
   - [ ]* 23.1 Write integration tests for offline-first flow
     - Test app launches with no network and displays cached pandal pins within 3 seconds
     - Test festival toggle reloads correct dataset within 500ms
@@ -562,7 +562,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 33: API JSON response validity** — verify valid JSON with data and meta fields
     - **Validates: Requirements 18.1, 18.5, 18.6, 28.3, 28.4, 28.6**
 
-- [ ] 24. Final checkpoint - Ensure all tests pass
+- [x] 24. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
