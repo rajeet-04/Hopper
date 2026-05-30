@@ -102,14 +102,14 @@ This plan implements the offline-first Android festival navigation app using Cle
 - [x] 4. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 5. Bilingual language support and theming
+- [x] 5. Bilingual language support and theming
   - [x] 5.1 Implement LocaleManager and StringProvider
     - Create `LocaleManager.kt` with SharedPreferences-backed locale state, StateFlow emission, and system default detection
     - Create `StringProvider.kt` with `resolve()` and `resolveNullable()` methods for bilingual field resolution
     - Create `di/LocaleModule.kt` Hilt module providing LocaleManager and StringProvider singletons
     - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-  - [-] 5.2 Implement HopperTheme and typography
+  - [x] 5.2 Implement HopperTheme and typography
     - Create `ui/theme/Typography.kt` with Hind Siliguri (Bengali) and Inter (Latin) font families
     - Create `ui/theme/HopperTheme.kt` composable wrapping MaterialTheme with locale-aware typography
     - Create `ui/theme/NightSafetyTheme.kt` with high-contrast dark theme, increased text size, 48dp minimum tap targets
@@ -121,40 +121,40 @@ This plan implements the offline-first Android festival navigation app using Cle
     - For any entity with English and Bengali fields, verify correct field is returned based on active locale with proper fallback behavior
     - **Validates: Requirements 10.2, 10.4**
 
-- [ ] 6. Festival toggle and location services
-  - [-] 6.1 Implement FestivalToggleController
+- [x] 6. Festival toggle and location services
+  - [x] 6.1 Implement FestivalToggleController
     - Create `FestivalToggleController` interface and implementation with `StateFlow<FestivalContext>`
     - Implement `getDefaultFestival()` using proximity to festival dates from bundled calendar
     - Persist selected festival/year in DataStore
     - Create Hilt module providing FestivalToggleController singleton
     - _Requirements: 2.1, 2.2, 2.3, 2.6_
 
-  - [-] 6.2 Implement LocationProvider
+  - [x] 6.2 Implement LocationProvider
     - Create `LocationProvider` interface with `StateFlow<LatLng?>` and `StateFlow<Boolean>` for availability
     - Implement using FusedLocationProviderClient with 10-second polling interval
     - Implement stationary detection: pause GPS after 2 minutes of no movement, resume on motion
     - Create `di/LocationModule.kt` Hilt module
     - _Requirements: 9.2, 9.3_
 
-  - [ ]* 6.3 Write property test for festival context filtering
+  - [x]* 6.3 Write property test for festival context filtering
     - **Property 1: Festival context filtering**
     - For any pandal dataset with entries from both festivals and multiple years, verify all query results contain only pandals matching both active festival AND active year
     - **Validates: Requirements 2.4, 2.5, 2.6**
 
-  - [ ]* 6.4 Write property test for default festival selection
+  - [x]* 6.4 Write property test for default festival selection
     - **Property 2: Default festival selection by date proximity**
     - For any calendar date, verify the default festival selection is the festival whose scheduled dates are nearest
     - **Validates: Requirements 2.3**
 
-- [ ] 7. Repository layer - core features
-  - [~] 7.1 Implement PandalRepository
+- [x] 7. Repository layer - core features
+  - [x] 7.1 Implement PandalRepository
     - Create `PandalRepository` interface in domain layer
     - Implement `PandalRepositoryImpl` with Room DAO queries filtered by festival/year context
     - Implement composite scoring algorithm: `0.5*distance + 0.3*crowd + 0.2*significance`
     - Implement `getNearestPandals()` using Haversine distance calculation in-memory
     - _Requirements: 1.1, 3.1, 3.2, 3.3, 3.4, 3.5_
 
-  - [~] 7.2 Implement ExitRouterRepository
+  - [x] 7.2 Implement ExitRouterRepository
     - Create `ExitRouterRepository` interface in domain layer
     - Implement `ExitRouterRepositoryImpl` with nearest exit node per category using Haversine
     - Implement walking time estimation: `ceil(distanceMeters / (5000/60))` minutes
@@ -162,36 +162,36 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Implement alternate route retrieval (at least 2 connectors per pandal-exit pair)
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 7.2_
 
-  - [~] 7.3 Implement CrowdReportRepository
+  - [x] 7.3 Implement CrowdReportRepository
     - Create `CrowdReportRepository` interface in domain layer
     - Implement `CrowdReportRepositoryImpl` with: submit report (with device hash), rate limit check (10 min per pandal per device), expiry cleanup (20 min), weighted median aggregation
     - Implement `getAggregatedCrowd()` returning Flow of current bucket using weighted median of non-expired reports
     - Queue reports locally when offline (`isSynced=false`)
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 11.1, 11.2_
 
-  - [~] 7.4 Implement CalendarRepository
+  - [x] 7.4 Implement CalendarRepository
     - Create `CalendarRepository` interface in domain layer
     - Implement `CalendarRepositoryImpl` with tithi queries by festival/year, current tithi detection
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
-  - [~] 7.5 Create RepositoryModule for Hilt DI
+  - [x] 7.5 Create RepositoryModule for Hilt DI
     - Create `di/RepositoryModule.kt` binding all repository interfaces to implementations
     - _Requirements: 8.1_
 
-  - [ ]* 7.6 Write property tests for core repositories
+  - [x]* 7.6 Write property tests for core repositories
     - **Property 3: Composite score sorting invariant** — verify Puja Near Me list sorted ascending by composite score
     - **Property 4: Exit router nearest-per-category** — verify nearest exit node returned per category by Haversine
     - **Property 5: Walking time calculation consistency** — verify time = ceil(distance / speed)
     - **Validates: Requirements 3.1, 4.2, 4.4, 14.3**
 
-  - [ ]* 7.7 Write property tests for crowd reporting
+  - [x]* 7.7 Write property tests for crowd reporting
     - **Property 6: Crowd report privacy invariant** — verify reports contain only pandalId, bucket, deviceHash, timestamp
     - **Property 7: Crowd report expiry** — verify reports excluded after 20 minutes
     - **Property 8: Weighted median crowd aggregation** — verify correct weighted median calculation
     - **Property 9: Crowd report rate limiting** — verify rejection within 10-minute window
     - **Validates: Requirements 5.3, 5.5, 5.6, 5.7, 11.1, 11.2, 11.4**
 
-- [~] 8. Checkpoint - Ensure all tests pass
+- [x] 8. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 9. Domain use cases
