@@ -6,7 +6,7 @@ This plan implements the offline-first Android festival navigation app using Cle
 
 ## Tasks
 
-- [ ] 1. Project setup, dependencies, and core infrastructure
+- [x] 1. Project setup, dependencies, and core infrastructure
   - [x] 1.1 Configure Gradle dependencies and version catalog
     - Add Hilt, Room, MapLibre GL Native, WorkManager, Navigation Compose, DataStore, Kotlin Coroutines, and testing libraries to `libs.versions.toml` and `app/build.gradle.kts`
     - Add KSP plugin for Room and Hilt annotation processing
@@ -19,12 +19,12 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Update `AndroidManifest.xml` with application class, permissions (INTERNET, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, VIBRATE)
     - _Requirements: 9.1, 9.5_
 
-  - [-] 1.3 Implement core domain models
+  - [x] 1.3 Implement core domain models
     - Create all domain model data classes: `Pandal`, `ExitNode`, `CrowdReport`, `CrowdBucket`, `Festival`, `FestivalContext`, `Tithi`, `LatLng`, `SourceType`, `ConfidenceLevel`, `ArtisanCredits`, `ExitNodeCategory`, `ExitRoute`
     - Create enums: `Festival`, `CrowdBucket`, `ExitNodeCategory`, `SourceType`, `ConfidenceLevel`
     - _Requirements: 1.1, 2.1, 3.2, 4.2, 5.1_
 
-  - [-] 1.4 Implement utility classes
+  - [x] 1.4 Implement utility classes
     - Create `HaversineCalculator.kt` with distance calculation between two `LatLng` points
     - Create `DeviceHashUtil.kt` with SHA-256 hashing of `Settings.Secure.ANDROID_ID`
     - Create `DateTimeUtils.kt` for epoch/Instant conversions
@@ -38,7 +38,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - _Requirements: 3.3, 11.1_
 
 - [ ] 2. Room database and entity layer
-  - [~] 2.1 Create Room entity classes
+  - [x] 2.1 Create Room entity classes
     - Implement `PandalEntity`, `ExitNodeEntity`, `ConnectorEntity`, `CrowdReportEntity`, `TithiEntity`, `EditionEntity` with all fields per design
     - Implement `LightTrailEntity`, `BhogPinEntity`, `ProcessionEntity`, `ProcessionReportEntity`, `HistoricalCrowdPatternEntity`
     - Implement `LostPersonPostEntity`, `OralHistoryEntity`, `HeritagePointEntity`, `ReputationEntity`
