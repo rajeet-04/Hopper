@@ -1,0 +1,11 @@
+name = "hopper-api"
+main = "src/index.ts"
+compatibility_date = "2024-05-12"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Rate limiting via Cloudflare's built-in
+# Secrets (set via `wrangler secret put`):
+# - SUPABASE_URL
+# - SUPABASE_SERVICE_KEY

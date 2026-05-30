@@ -1,0 +1,5 @@
+# Copy this to .dev.vars for local development
+# These are set as secrets in production via `wrangler secret put`
+
+SUPABASE_URL=https://your-project-ref.supabase.co
+SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...your-service-role-key

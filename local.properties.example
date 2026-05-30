@@ -11,6 +11,10 @@ sdk.dir=/path/to/your/Android/Sdk
 # Backend API (your deployed Cloudflare Worker URL)
 api.base.url=https://hopper-api.your-subdomain.workers.dev/
 
+# Supabase (for Realtime subscriptions - get from Supabase Dashboard > Settings > API)
+supabase.url=https://your-project-ref.supabase.co
+supabase.anon.key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.your-anon-key
+
 # MapLibre Style URLs (replace with your own tile server if needed)
 map.style.url=https://demotiles.maplibre.org/style.json
 map.night.style.url=https://demotiles.maplibre.org/style.json

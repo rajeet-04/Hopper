@@ -34,6 +34,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_BASE_URL", "\"${localProperties.getProperty("api.base.url", "")}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("supabase.url", "")}\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${localProperties.getProperty("supabase.anon.key", "")}\"")
         buildConfigField("String", "MAP_STYLE_URL", "\"${localProperties.getProperty("map.style.url", "")}\"")
         buildConfigField("String", "MAP_NIGHT_STYLE_URL", "\"${localProperties.getProperty("map.night.style.url", "")}\"")
         buildConfigField("String", "MAP_TILES_URL", "\"${localProperties.getProperty("map.tiles.url", "")}\"")
@@ -52,20 +54,19 @@ android {
     }
 
     // Split APK by ABI — eliminates unused native libs per device
-    // arm64-v8a alone drops ~20MB of x86/armv7 MapLibre .so files
     splits {
         abi {
             isEnable = true
             reset()
             include("arm64-v8a", "armeabi-v7a")
-            isUniversalApk = true // Keep a universal fallback
+            isUniversalApk = true
         }
     }
 
-    // Strip native debug symbols
+    // Compress native libs and strip metadata
     packaging {
         jniLibs {
-            useLegacyPackaging = false // Compress native libs in APK
+            useLegacyPackaging = false
         }
         resources {
             excludes += setOf(
@@ -81,12 +82,13 @@ android {
         }
     }
 
-    // Enable Android App Bundle for Play Store (even smaller per-device)
+    // AAB splits for Play Store
     bundle {
         abi { enableSplit = true }
         language { enableSplit = true }
         density { enableSplit = true }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
