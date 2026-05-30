@@ -1,0 +1,133 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3725, 22.5952]
+      },
+      "properties": {
+        "id": "exit_metro_shyambazar",
+        "name": "Shyambazar Metro Station",
+        "name_bengali": "শ্যামবাজার মেট্রো স্টেশন",
+        "category": "METRO",
+        "contact_number": "033-22861234",
+        "is_24hr": false,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3648, 22.5878]
+      },
+      "properties": {
+        "id": "exit_metro_sovabazar",
+        "name": "Sovabazar-Sutanuti Metro Station",
+        "name_bengali": "শোভাবাজার-সুতানুটি মেট্রো স্টেশন",
+        "category": "METRO",
+        "contact_number": "033-22865678",
+        "is_24hr": false,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3426, 22.5839]
+      },
+      "properties": {
+        "id": "exit_railway_howrah",
+        "name": "Howrah Junction",
+        "name_bengali": "হাওড়া জংশন",
+        "category": "RAILWAY",
+        "contact_number": "033-26382217",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3799, 22.5563]
+      },
+      "properties": {
+        "id": "exit_railway_sealdah",
+        "name": "Sealdah Station",
+        "name_bengali": "শিয়ালদহ স্টেশন",
+        "category": "RAILWAY",
+        "contact_number": "033-23503535",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3612, 22.5935]
+      },
+      "properties": {
+        "id": "exit_police_bagbazar",
+        "name": "Bagbazar Police Booth",
+        "name_bengali": "বাগবাজার পুলিশ বুথ",
+        "category": "POLICE",
+        "contact_number": "100",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3498, 22.5201]
+      },
+      "properties": {
+        "id": "exit_police_deshapriya",
+        "name": "Deshapriya Park Police Booth",
+        "name_bengali": "দেশপ্রিয় পার্ক পুলিশ বুথ",
+        "category": "POLICE",
+        "contact_number": "100",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3654, 22.5912]
+      },
+      "properties": {
+        "id": "exit_medical_rg_kar",
+        "name": "R.G. Kar Medical College",
+        "name_bengali": "আর.জি. কর মেডিকেল কলেজ",
+        "category": "MEDICAL",
+        "contact_number": "033-25557656",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3635, 22.5485]
+      },
+      "properties": {
+        "id": "exit_medical_sskm",
+        "name": "SSKM Hospital",
+        "name_bengali": "এসএসকেএম হাসপাতাল",
+        "category": "MEDICAL",
+        "contact_number": "033-22041101",
+        "is_24hr": true,
+        "is_well_lit": true
+      }
+    }
+  ]
+}

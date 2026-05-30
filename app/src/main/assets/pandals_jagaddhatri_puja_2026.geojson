@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3621, 22.8671]
+      },
+      "properties": {
+        "id": "jp2026_bhadreswar",
+        "name": "Bhadreswar Adi Jagaddhatri",
+        "name_bengali": "ভদ্রেশ্বর আদি জগদ্ধাত্রী",
+        "city": "Chandannagar",
+        "neighborhood": "Bhadreswar",
+        "festival": "JAGADDHATRI_PUJA",
+        "year": 2026,
+        "theme": "Chandannagar Heritage Lighting",
+        "committee_name": "Bhadreswar Adi Jagaddhatri Puja Committee",
+        "established_year": 1890,
+        "artisan_credits_json": "[{\"name\":\"Ratan Pal\",\"role\":\"idol_maker\"}]",
+        "awards": "Best Traditional Idol 2025",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3583, 22.8625]
+      },
+      "properties": {
+        "id": "jp2026_chandannagar_strand",
+        "name": "Chandannagar Strand Road",
+        "name_bengali": "চন্দননগর স্ট্র্যান্ড রোড",
+        "city": "Chandannagar",
+        "neighborhood": "Strand Road",
+        "festival": "JAGADDHATRI_PUJA",
+        "year": 2026,
+        "theme": "French Colonial Revival",
+        "committee_name": "Strand Road Jagaddhatri Puja Samiti",
+        "established_year": 1925,
+        "artisan_credits_json": "[{\"name\":\"Bikash Rudra\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Lighting 2024",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3645, 22.8702]
+      },
+      "properties": {
+        "id": "jp2026_mankundu",
+        "name": "Mankundu Jagaddhatri Puja",
+        "name_bengali": "মানকুন্ডু জগদ্ধাত্রী পূজা",
+        "city": "Chandannagar",
+        "neighborhood": "Mankundu",
+        "festival": "JAGADDHATRI_PUJA",
+        "year": 2026,
+        "theme": "Dokra Metal Craft",
+        "committee_name": "Mankundu Sarbojanin Jagaddhatri Puja",
+        "established_year": 1952,
+        "artisan_credits_json": "[{\"name\":\"Sunil Karmakar\",\"role\":\"idol_maker\"}]",
+        "awards": null,
+        "significance_rank": 3,
+        "source_type": "COMMUNITY",
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.5012, 23.4011]
+      },
+      "properties": {
+        "id": "jp2026_krishnanagar_rajbari",
+        "name": "Krishnanagar Rajbari",
+        "name_bengali": "কৃষ্ণনগর রাজবাড়ি",
+        "city": "Krishnanagar",
+        "neighborhood": "Rajbari",
+        "festival": "JAGADDHATRI_PUJA",
+        "year": 2026,
+        "theme": "Royal Bengal Heritage",
+        "committee_name": "Krishnanagar Rajbari Jagaddhatri Puja Committee",
+        "established_year": 1762,
+        "artisan_credits_json": "[{\"name\":\"Gobinda Pal\",\"role\":\"idol_maker\"}]",
+        "awards": "Heritage Award 2024",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.4985, 23.3978]
+      },
+      "properties": {
+        "id": "jp2026_krishnanagar_ghurni",
+        "name": "Ghurni Jagaddhatri",
+        "name_bengali": "ঘূর্ণি জগদ্ধাত্রী",
+        "city": "Krishnanagar",
+        "neighborhood": "Ghurni",
+        "festival": "JAGADDHATRI_PUJA",
+        "year": 2026,
+        "theme": "Clay Artisan Village",
+        "committee_name": "Ghurni Sarbojanin Jagaddhatri Puja",
+        "established_year": 1880,
+        "artisan_credits_json": "[{\"name\":\"Kartik Rudra Pal\",\"role\":\"idol_maker\"},{\"name\":\"Sushil Pal\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Artisan Idol 2025",
+        "significance_rank": 2,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    }
+  ]
+}

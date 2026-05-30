@@ -37,7 +37,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Test edge cases: same point returns 0, antipodal points
     - _Requirements: 3.3, 11.1_
 
-- [ ] 2. Room database and entity layer
+- [x] 2. Room database and entity layer
   - [x] 2.1 Create Room entity classes
     - Implement `PandalEntity`, `ExitNodeEntity`, `ConnectorEntity`, `CrowdReportEntity`, `TithiEntity`, `EditionEntity` with all fields per design
     - Implement `LightTrailEntity`, `BhogPinEntity`, `ProcessionEntity`, `ProcessionReportEntity`, `HistoricalCrowdPatternEntity`
@@ -47,7 +47,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Create `Converters.kt` type converter class for JSON arrays, enums, and timestamps
     - _Requirements: 8.1, 8.2, 8.3, 8.6_
 
-  - [-] 2.2 Create Room DAO interfaces
+  - [x] 2.2 Create Room DAO interfaces
     - Implement `PandalDao` with queries: getByFestivalAndYear, getById, getNearestPandals (ordered by lat/lng proximity), search
     - Implement `ExitNodeDao` with queries: getByCategory, getNearestByCategory
     - Implement `CrowdReportDao` with queries: getActiveReportsForPandal (non-expired), insert, getLatestByDeviceAndPandal (rate limit check), deleteExpired
@@ -56,21 +56,21 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Implement `LostPersonDao`, `OralHistoryDao`, `HeritageDao`, `ReputationDao`, `VolunteerDao`, `RitualGuideDao`
     - _Requirements: 8.1, 8.2, 5.5, 5.7_
 
-  - [-] 2.3 Create HopperDatabase and DatabaseModule
+  - [x] 2.3 Create HopperDatabase and DatabaseModule
     - Implement `HopperDatabase.kt` abstract class with all DAO accessors
     - Create `di/DatabaseModule.kt` Hilt module providing Room database singleton and all DAO instances
     - Configure Room with fallback to destructive migration for development
     - _Requirements: 8.1_
 
-  - [ ]* 2.4 Write unit tests for Room DAOs
+  - [x]* 2.4 Write unit tests for Room DAOs
     - Test PandalDao festival/year filtering returns only matching entries
     - Test CrowdReportDao expiry query excludes reports older than 20 minutes
     - Test CrowdReportDao rate limit query detects reports within 10-minute window
     - Use in-memory Room database for tests
     - _Requirements: 2.4, 2.5, 2.6, 5.5, 5.7_
 
-- [ ] 3. Offline data loading and GeoJSON asset layer
-  - [~] 3.1 Implement GeoJsonAssetLoader
+- [x] 3. Offline data loading and GeoJSON asset layer
+  - [x] 3.1 Implement GeoJsonAssetLoader
     - Create `GeoJsonAssetLoader.kt` that reads bundled GeoJSON files from `assets/` folder
     - Parse GeoJSON FeatureCollection into `PandalEntity` list
     - Parse exit node GeoJSON into `ExitNodeEntity` list
@@ -78,7 +78,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Implement first-launch database seeding from bundled assets
     - _Requirements: 1.1, 8.1, 8.2, 8.3_
 
-  - [~] 3.2 Create bundled asset files
+  - [x] 3.2 Create bundled asset files
     - Create sample `assets/pandals_durga_puja_2026.geojson` with pandal data structure
     - Create sample `assets/pandals_jagaddhatri_puja_2026.geojson`
     - Create sample `assets/exit_nodes.geojson` with Metro, Railway, Police, Medical nodes
@@ -87,49 +87,49 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Create sample `assets/historical_crowd_patterns.json`
     - _Requirements: 1.1, 1.3, 4.3, 6.2, 8.1, 8.2, 8.3, 18.5_
 
-  - [~] 3.3 Implement database prepopulation on first launch
+  - [x] 3.3 Implement database prepopulation on first launch
     - Create `DatabasePrepopulateCallback` that loads all bundled assets into Room on first install
     - Wire callback into `DatabaseModule` Room builder
     - Ensure prepopulation runs only once (check via shared preferences flag)
     - _Requirements: 1.1, 8.1_
 
-  - [ ]* 3.4 Write unit tests for GeoJsonAssetLoader
+  - [x]* 3.4 Write unit tests for GeoJsonAssetLoader
     - Test parsing valid GeoJSON produces correct PandalEntity list
     - Test malformed GeoJSON features are skipped gracefully
     - Test all required fields are mapped correctly
     - _Requirements: 1.1, 8.1_
 
-- [~] 4. Checkpoint - Ensure all tests pass
+- [x] 4. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 5. Bilingual language support and theming
-  - [~] 5.1 Implement LocaleManager and StringProvider
+  - [x] 5.1 Implement LocaleManager and StringProvider
     - Create `LocaleManager.kt` with SharedPreferences-backed locale state, StateFlow emission, and system default detection
     - Create `StringProvider.kt` with `resolve()` and `resolveNullable()` methods for bilingual field resolution
     - Create `di/LocaleModule.kt` Hilt module providing LocaleManager and StringProvider singletons
     - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-  - [~] 5.2 Implement HopperTheme and typography
+  - [-] 5.2 Implement HopperTheme and typography
     - Create `ui/theme/Typography.kt` with Hind Siliguri (Bengali) and Inter (Latin) font families
     - Create `ui/theme/HopperTheme.kt` composable wrapping MaterialTheme with locale-aware typography
     - Create `ui/theme/NightSafetyTheme.kt` with high-contrast dark theme, increased text size, 48dp minimum tap targets
     - Bundle font files in `res/font/` directory
     - _Requirements: 7.1, 10.3_
 
-  - [ ]* 5.3 Write property test for locale resolution
+  - [x]* 5.3 Write property test for locale resolution
     - **Property 11: Locale resolution for bilingual fields**
     - For any entity with English and Bengali fields, verify correct field is returned based on active locale with proper fallback behavior
     - **Validates: Requirements 10.2, 10.4**
 
 - [ ] 6. Festival toggle and location services
-  - [~] 6.1 Implement FestivalToggleController
+  - [-] 6.1 Implement FestivalToggleController
     - Create `FestivalToggleController` interface and implementation with `StateFlow<FestivalContext>`
     - Implement `getDefaultFestival()` using proximity to festival dates from bundled calendar
     - Persist selected festival/year in DataStore
     - Create Hilt module providing FestivalToggleController singleton
     - _Requirements: 2.1, 2.2, 2.3, 2.6_
 
-  - [~] 6.2 Implement LocationProvider
+  - [-] 6.2 Implement LocationProvider
     - Create `LocationProvider` interface with `StateFlow<LatLng?>` and `StateFlow<Boolean>` for availability
     - Implement using FusedLocationProviderClient with 10-second polling interval
     - Implement stationary detection: pause GPS after 2 minutes of no movement, resume on motion

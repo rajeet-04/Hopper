@@ -1,0 +1,90 @@
+[
+  {
+    "id": "tithi_dp2026_shashti",
+    "festival": "DURGA_PUJA",
+    "year": 2026,
+    "name": "Shashti",
+    "name_bengali": "ষষ্ঠী",
+    "date": 1792022400000,
+    "cultural_significance": "Bodhon - Awakening of the Goddess. Unveiling of the idol and beginning of festivities.",
+    "cultural_significance_bengali": "বোধন - দেবীর জাগরণ। প্রতিমা উন্মোচন ও উৎসবের সূচনা।",
+    "is_peak_crowd": false
+  },
+  {
+    "id": "tithi_dp2026_saptami",
+    "festival": "DURGA_PUJA",
+    "year": 2026,
+    "name": "Saptami",
+    "name_bengali": "সপ্তমী",
+    "date": 1792108800000,
+    "cultural_significance": "Nabapatrika Snan - Bathing of the nine plants. Prana Pratishtha of the idol.",
+    "cultural_significance_bengali": "নবপত্রিকা স্নান - নয়টি গাছের স্নান। প্রতিমায় প্রাণ প্রতিষ্ঠা।",
+    "is_peak_crowd": false
+  },
+  {
+    "id": "tithi_dp2026_ashtami",
+    "festival": "DURGA_PUJA",
+    "year": 2026,
+    "name": "Ashtami",
+    "name_bengali": "অষ্টমী",
+    "date": 1792195200000,
+    "cultural_significance": "Kumari Puja and Sandhi Puja at the junction of Ashtami-Navami. Peak devotional day.",
+    "cultural_significance_bengali": "কুমারী পূজা ও সন্ধি পূজা অষ্টমী-নবমীর সন্ধিক্ষণে। সর্বোচ্চ ভক্তির দিন।",
+    "is_peak_crowd": true
+  },
+  {
+    "id": "tithi_dp2026_navami",
+    "festival": "DURGA_PUJA",
+    "year": 2026,
+    "name": "Navami",
+    "name_bengali": "নবমী",
+    "date": 1792281600000,
+    "cultural_significance": "Maha Navami - Grand worship and Homa. Last full day of the Goddess's presence.",
+    "cultural_significance_bengali": "মহানবমী - মহাপূজা ও হোম। দেবীর শেষ পূর্ণ দিন।",
+    "is_peak_crowd": true
+  },
+  {
+    "id": "tithi_dp2026_dashami",
+    "festival": "DURGA_PUJA",
+    "year": 2026,
+    "name": "Dashami",
+    "name_bengali": "দশমী",
+    "date": 1792368000000,
+    "cultural_significance": "Vijaya Dashami - Sindoor Khela and Bishorjon (immersion). Farewell to the Goddess.",
+    "cultural_significance_bengali": "বিজয়া দশমী - সিঁদুর খেলা ও বিসর্জন। দেবীর বিদায়।",
+    "is_peak_crowd": true
+  },
+  {
+    "id": "tithi_jp2026_saptami",
+    "festival": "JAGADDHATRI_PUJA",
+    "year": 2026,
+    "name": "Saptami",
+    "name_bengali": "সপ্তমী",
+    "date": 1795392000000,
+    "cultural_significance": "Beginning of Jagaddhatri Puja. Prana Pratishtha and evening aarti.",
+    "cultural_significance_bengali": "জগদ্ধাত্রী পূজার সূচনা। প্রাণ প্রতিষ্ঠা ও সন্ধ্যা আরতি।",
+    "is_peak_crowd": false
+  },
+  {
+    "id": "tithi_jp2026_ashtami",
+    "festival": "JAGADDHATRI_PUJA",
+    "year": 2026,
+    "name": "Ashtami",
+    "name_bengali": "অষ্টমী",
+    "date": 1795478400000,
+    "cultural_significance": "Main puja day. Grand lighting displays in Chandannagar begin at dusk.",
+    "cultural_significance_bengali": "প্রধান পূজার দিন। সন্ধ্যায় চন্দননগরের আলোকসজ্জা শুরু।",
+    "is_peak_crowd": true
+  },
+  {
+    "id": "tithi_jp2026_navami",
+    "festival": "JAGADDHATRI_PUJA",
+    "year": 2026,
+    "name": "Navami",
+    "name_bengali": "নবমী",
+    "date": 1795564800000,
+    "cultural_significance": "Final day and Bishorjon procession. Spectacular immersion processions through illuminated streets.",
+    "cultural_significance_bengali": "শেষ দিন ও বিসর্জন শোভাযাত্রা। আলোকিত রাস্তায় দর্শনীয় বিসর্জন মিছিল।",
+    "is_peak_crowd": true
+  }
+]

@@ -1,0 +1,183 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3629, 22.5958],
+          [88.3635, 22.5955],
+          [88.3648, 22.5950],
+          [88.3660, 22.5948],
+          [88.3680, 22.5945],
+          [88.3700, 22.5948],
+          [88.3725, 22.5952]
+        ]
+      },
+      "properties": {
+        "id": "conn_bagbazar_to_shyambazar_metro",
+        "pandal_id": "dp2026_bagbazar",
+        "exit_node_id": "exit_metro_shyambazar",
+        "distance_meters": 850,
+        "is_well_lit": true,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3629, 22.5958],
+          [88.3625, 22.5950],
+          [88.3630, 22.5940],
+          [88.3638, 22.5925],
+          [88.3645, 22.5910],
+          [88.3648, 22.5878]
+        ]
+      },
+      "properties": {
+        "id": "conn_bagbazar_to_sovabazar_metro",
+        "pandal_id": "dp2026_bagbazar",
+        "exit_node_id": "exit_metro_sovabazar",
+        "distance_meters": 920,
+        "is_well_lit": true,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3629, 22.5958],
+          [88.3620, 22.5960],
+          [88.3610, 22.5955],
+          [88.3615, 22.5945],
+          [88.3612, 22.5935]
+        ]
+      },
+      "properties": {
+        "id": "conn_bagbazar_to_police",
+        "pandal_id": "dp2026_bagbazar",
+        "exit_node_id": "exit_police_bagbazar",
+        "distance_meters": 310,
+        "is_well_lit": true,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3629, 22.5958],
+          [88.3640, 22.5950],
+          [88.3645, 22.5940],
+          [88.3650, 22.5925],
+          [88.3654, 22.5912]
+        ]
+      },
+      "properties": {
+        "id": "conn_bagbazar_to_rg_kar",
+        "pandal_id": "dp2026_bagbazar",
+        "exit_node_id": "exit_medical_rg_kar",
+        "distance_meters": 580,
+        "is_well_lit": true,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3505, 22.5175],
+          [88.3502, 22.5180],
+          [88.3498, 22.5188],
+          [88.3498, 22.5195],
+          [88.3498, 22.5201]
+        ]
+      },
+      "properties": {
+        "id": "conn_deshapriya_to_police",
+        "pandal_id": "dp2026_deshapriya",
+        "exit_node_id": "exit_police_deshapriya",
+        "distance_meters": 320,
+        "is_well_lit": true,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3795, 22.5482],
+          [88.3798, 22.5490],
+          [88.3800, 22.5510],
+          [88.3802, 22.5530],
+          [88.3800, 22.5545],
+          [88.3799, 22.5563]
+        ]
+      },
+      "properties": {
+        "id": "conn_santosh_mitra_to_sealdah",
+        "pandal_id": "dp2026_santosh_mitra",
+        "exit_node_id": "exit_railway_sealdah",
+        "distance_meters": 920,
+        "is_well_lit": false,
+        "is_alternate": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3795, 22.5482],
+          [88.3780, 22.5490],
+          [88.3760, 22.5500],
+          [88.3740, 22.5515],
+          [88.3720, 22.5530],
+          [88.3710, 22.5545],
+          [88.3700, 22.5555],
+          [88.3799, 22.5563]
+        ]
+      },
+      "properties": {
+        "id": "conn_santosh_mitra_to_sealdah_alt",
+        "pandal_id": "dp2026_santosh_mitra",
+        "exit_node_id": "exit_railway_sealdah",
+        "distance_meters": 1350,
+        "is_well_lit": true,
+        "is_alternate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88.3587, 22.5982],
+          [88.3590, 22.5975],
+          [88.3600, 22.5965],
+          [88.3620, 22.5960],
+          [88.3640, 22.5955],
+          [88.3660, 22.5952],
+          [88.3690, 22.5950],
+          [88.3725, 22.5952]
+        ]
+      },
+      "properties": {
+        "id": "conn_kumartuli_to_shyambazar_metro",
+        "pandal_id": "dp2026_kumartuli",
+        "exit_node_id": "exit_metro_shyambazar",
+        "distance_meters": 1250,
+        "is_well_lit": false,
+        "is_alternate": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3629, 22.5958]
+      },
+      "properties": {
+        "id": "dp2026_bagbazar",
+        "name": "Bagbazar Sarbojanin",
+        "name_bengali": "বাগবাজার সার্বজনীন",
+        "city": "Kolkata",
+        "neighborhood": "Bagbazar",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Terracotta Temple Architecture",
+        "committee_name": "Bagbazar Sarbojanin Durgotsab Committee",
+        "established_year": 1919,
+        "artisan_credits_json": "[{\"name\":\"Sanatan Dinda\",\"role\":\"idol_maker\"}]",
+        "awards": "Best Pandal 2024",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3587, 22.5982]
+      },
+      "properties": {
+        "id": "dp2026_kumartuli",
+        "name": "Kumartuli Park Sarbojanin",
+        "name_bengali": "কুমারটুলি পার্ক সার্বজনীন",
+        "city": "Kolkata",
+        "neighborhood": "Kumartuli",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Underwater Coral Kingdom",
+        "committee_name": "Kumartuli Park Sarbojanin Durgotsab",
+        "established_year": 1995,
+        "artisan_credits_json": "[{\"name\":\"Rintu Das\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Idol 2023",
+        "significance_rank": 2,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3389, 22.5112]
+      },
+      "properties": {
+        "id": "dp2026_chetla",
+        "name": "Chetla Agrani Club",
+        "name_bengali": "চেতলা অগ্রণী ক্লাব",
+        "city": "Kolkata",
+        "neighborhood": "Chetla",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Rajasthani Haveli",
+        "committee_name": "Chetla Agrani Club",
+        "established_year": 1965,
+        "artisan_credits_json": "[{\"name\":\"Bhabatosh Sutar\",\"role\":\"pandal_artist\"}]",
+        "awards": null,
+        "significance_rank": 3,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3501, 22.5189]
+      },
+      "properties": {
+        "id": "dp2026_suruchi",
+        "name": "Suruchi Sangha",
+        "name_bengali": "সুরুচি সংঘ",
+        "city": "Kolkata",
+        "neighborhood": "New Alipore",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Bishnupur Terracotta Heritage",
+        "committee_name": "Suruchi Sangha",
+        "established_year": 1972,
+        "artisan_credits_json": "[{\"name\":\"Gouranga Kuila\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Theme 2025, Best Pandal 2022",
+        "significance_rank": 2,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3505, 22.5175]
+      },
+      "properties": {
+        "id": "dp2026_deshapriya",
+        "name": "Deshapriya Park",
+        "name_bengali": "দেশপ্রিয় পার্ক",
+        "city": "Kolkata",
+        "neighborhood": "Deshapriya Park",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Chandelier Palace",
+        "committee_name": "Deshapriya Park Sarbojanin Durgotsab Committee",
+        "established_year": 1939,
+        "artisan_credits_json": "[{\"name\":\"Pradip Das\",\"role\":\"idol_maker\"}]",
+        "awards": "Best Lighting 2024",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3472, 22.5243]
+      },
+      "properties": {
+        "id": "dp2026_tridhara",
+        "name": "Tridhara Sammilani",
+        "name_bengali": "ত্রিধারা সম্মিলনী",
+        "city": "Kolkata",
+        "neighborhood": "Deshapriya Park",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Mughal Miniature Art",
+        "committee_name": "Tridhara Sammilani",
+        "established_year": 1963,
+        "artisan_credits_json": "[{\"name\":\"Subir Pal\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Innovation 2023",
+        "significance_rank": 3,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3631, 22.5726]
+      },
+      "properties": {
+        "id": "dp2026_college_square",
+        "name": "College Square Sarbojanin",
+        "name_bengali": "কলেজ স্কোয়ার সার্বজনীন",
+        "city": "Kolkata",
+        "neighborhood": "College Street",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Bankura Horse Motif",
+        "committee_name": "College Square Sarbojanin Durgotsab",
+        "established_year": 1948,
+        "artisan_credits_json": "[{\"name\":\"Kartik Pal\",\"role\":\"idol_maker\"}]",
+        "awards": null,
+        "significance_rank": 4,
+        "source_type": "COMMUNITY",
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3795, 22.5482]
+      },
+      "properties": {
+        "id": "dp2026_santosh_mitra",
+        "name": "Santosh Mitra Square",
+        "name_bengali": "সন্তোষ মিত্র স্কোয়ার",
+        "city": "Kolkata",
+        "neighborhood": "Sealdah",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Angkor Wat Replica",
+        "committee_name": "Santosh Mitra Square Durgotsab Committee",
+        "established_year": 1936,
+        "artisan_credits_json": "[{\"name\":\"Mintu Pal\",\"role\":\"pandal_artist\"},{\"name\":\"Asim Pal\",\"role\":\"idol_maker\"}]",
+        "awards": "Best Pandal 2023",
+        "significance_rank": 1,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3445, 22.5021]
+      },
+      "properties": {
+        "id": "dp2026_behala_nutan",
+        "name": "Behala Nutan Dal",
+        "name_bengali": "বেহালা নতুন দল",
+        "city": "Kolkata",
+        "neighborhood": "Behala",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Madhubani Folk Art",
+        "committee_name": "Behala Nutan Dal",
+        "established_year": 1970,
+        "artisan_credits_json": "[{\"name\":\"Tapan Ghosh\",\"role\":\"pandal_artist\"}]",
+        "awards": null,
+        "significance_rank": 5,
+        "source_type": "COMMUNITY",
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.3712, 22.5645]
+      },
+      "properties": {
+        "id": "dp2026_mohammad_ali_park",
+        "name": "Mohammad Ali Park",
+        "name_bengali": "মহম্মদ আলি পার্ক",
+        "city": "Kolkata",
+        "neighborhood": "Central Kolkata",
+        "festival": "DURGA_PUJA",
+        "year": 2026,
+        "theme": "Egyptian Pyramid",
+        "committee_name": "Mohammad Ali Park Durgotsab Committee",
+        "established_year": 1969,
+        "artisan_credits_json": "[{\"name\":\"Partha Das\",\"role\":\"pandal_artist\"}]",
+        "awards": "Best Crowd Management 2024",
+        "significance_rank": 2,
+        "source_type": "COMMITTEE",
+        "confidence_level": "HIGH"
+      }
+    }
+  ]
+}

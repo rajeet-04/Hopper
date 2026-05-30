@@ -1,0 +1,210 @@
+[
+  {
+    "id": "hcp_bagbazar_d1_18",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 1,
+    "hour_of_day": 18,
+    "predicted_bucket": "GREEN",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d1_20",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 1,
+    "hour_of_day": 20,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d1_22",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 1,
+    "hour_of_day": 22,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_18",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 18,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_20",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 20,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_21",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 21,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_22",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 22,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_23",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 23,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d3_24",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 3,
+    "hour_of_day": 24,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d4_19",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 4,
+    "hour_of_day": 19,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d4_21",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 4,
+    "hour_of_day": 21,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_bagbazar_d4_23",
+    "pandal_id": "dp2026_bagbazar",
+    "day_of_festival": 4,
+    "hour_of_day": 23,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d3_18",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 3,
+    "hour_of_day": 18,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d3_20",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 3,
+    "hour_of_day": 20,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d3_22",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 3,
+    "hour_of_day": 22,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d4_19",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 4,
+    "hour_of_day": 19,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d4_21",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 4,
+    "hour_of_day": 21,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_deshapriya_d4_25",
+    "pandal_id": "dp2026_deshapriya",
+    "day_of_festival": 4,
+    "hour_of_day": 25,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_suruchi_d2_19",
+    "pandal_id": "dp2026_suruchi",
+    "day_of_festival": 2,
+    "hour_of_day": 19,
+    "predicted_bucket": "GREEN",
+    "year": 2025
+  },
+  {
+    "id": "hcp_suruchi_d2_21",
+    "pandal_id": "dp2026_suruchi",
+    "day_of_festival": 2,
+    "hour_of_day": 21,
+    "predicted_bucket": "YELLOW",
+    "year": 2025
+  },
+  {
+    "id": "hcp_suruchi_d3_20",
+    "pandal_id": "dp2026_suruchi",
+    "day_of_festival": 3,
+    "hour_of_day": 20,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_suruchi_d3_22",
+    "pandal_id": "dp2026_suruchi",
+    "day_of_festival": 3,
+    "hour_of_day": 22,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_santosh_mitra_d3_20",
+    "pandal_id": "dp2026_santosh_mitra",
+    "day_of_festival": 3,
+    "hour_of_day": 20,
+    "predicted_bucket": "RED",
+    "year": 2025
+  },
+  {
+    "id": "hcp_santosh_mitra_d3_26",
+    "pandal_id": "dp2026_santosh_mitra",
+    "day_of_festival": 3,
+    "hour_of_day": 26,
+    "predicted_bucket": "GREEN",
+    "year": 2025
+  },
+  {
+    "id": "hcp_kumartuli_d1_19",
+    "pandal_id": "dp2026_kumartuli",
+    "day_of_festival": 1,
+    "hour_of_day": 19,
+    "predicted_bucket": "GREEN",
+    "year": 2025
+  },
+  {
+    "id": "hcp_kumartuli_d3_21",
+    "pandal_id": "dp2026_kumartuli",
+    "day_of_festival": 3,
+    "hour_of_day": 21,
+    "predicted_bucket": "RED",
+    "year": 2025
+  }
+]

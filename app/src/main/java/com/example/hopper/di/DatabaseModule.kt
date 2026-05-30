@@ -1,7 +1,11 @@
 package com.example.hopper.di
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.res.AssetManager
 import androidx.room.Room
+import com.example.hopper.data.local.assets.GeoJsonAssetLoader
+import com.example.hopper.data.local.db.DatabasePrepopulateCallback
 import com.example.hopper.data.local.db.HopperDatabase
 import com.example.hopper.data.local.db.dao.AudioAssetDao
 import com.example.hopper.data.local.db.dao.BhogDao
@@ -26,10 +30,17 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Provider
+import javax.inject.Qualifier
 import javax.inject.Singleton
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class DatabasePrefs
 
 /**
  * Hilt module providing the Room database singleton and all DAO instances.
+ * Also provides dependencies needed for first-launch database prepopulation.
  */
 @Module
 @InstallIn(SingletonComponent::class)
@@ -37,12 +48,43 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): HopperDatabase {
+    fun provideAssetManager(@ApplicationContext context: Context): AssetManager {
+        return context.assets
+    }
+
+    @Provides
+    @Singleton
+    @DatabasePrefs
+    fun provideDatabaseSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("hopper_database_prefs", Context.MODE_PRIVATE)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabasePrepopulateCallback(
+        databaseProvider: Provider<HopperDatabase>,
+        assetLoader: GeoJsonAssetLoader,
+        @DatabasePrefs sharedPreferences: SharedPreferences
+    ): DatabasePrepopulateCallback {
+        return DatabasePrepopulateCallback(
+            databaseProvider = databaseProvider,
+            assetLoader = assetLoader,
+            sharedPreferences = sharedPreferences
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(
+        @ApplicationContext context: Context,
+        prepopulateCallback: DatabasePrepopulateCallback
+    ): HopperDatabase {
         return Room.databaseBuilder(
             context,
             HopperDatabase::class.java,
             "hopper_database"
         )
+            .addCallback(prepopulateCallback)
             .fallbackToDestructiveMigration(dropAllTables = true)
             .build()
     }
