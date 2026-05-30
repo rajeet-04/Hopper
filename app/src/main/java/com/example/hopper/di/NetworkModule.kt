@@ -1,5 +1,6 @@
 package com.example.hopper.di
 
+import com.example.hopper.BuildConfig
 import com.example.hopper.data.remote.api.HopperApiService
 import dagger.Module
 import dagger.Provides
@@ -17,10 +18,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
-    // TODO: Replace with your deployed Cloudflare Worker URL
-    // e.g., "https://hopper-api.<your-subdomain>.workers.dev/"
-    private const val BASE_URL = "https://hopper-api.your-subdomain.workers.dev/"
 
     @Provides
     @Singleton
@@ -48,7 +45,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, json: Json): Retrofit {
         val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.API_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(json.asConverterFactory(contentType))
             .build()

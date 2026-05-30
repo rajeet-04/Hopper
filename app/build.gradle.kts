@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -5,6 +7,13 @@ plugins {
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.room)
     alias(libs.plugins.kotlin.serialization)
+}
+
+// Load secrets from local.properties (gitignored)
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
 }
 
 android {
@@ -23,13 +32,6 @@ android {
         versionName = "0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // Load secrets from local.properties (gitignored)
-        val localProperties = java.util.Properties()
-        val localPropertiesFile = rootProject.file("local.properties")
-        if (localPropertiesFile.exists()) {
-            localProperties.load(localPropertiesFile.inputStream())
-        }
 
         buildConfigField("String", "API_BASE_URL", "\"${localProperties.getProperty("api.base.url", "")}\"")
         buildConfigField("String", "MAP_STYLE_URL", "\"${localProperties.getProperty("map.style.url", "")}\"")

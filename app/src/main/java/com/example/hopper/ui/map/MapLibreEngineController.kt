@@ -1,6 +1,7 @@
 package com.example.hopper.ui.map
 
 import android.content.Context
+import com.example.hopper.BuildConfig
 import com.example.hopper.domain.model.CrowdBucket
 import com.example.hopper.domain.model.ExitNode
 import com.example.hopper.domain.model.ExitNodeCategory
@@ -31,8 +32,8 @@ class MapLibreEngineController @Inject constructor(
     private var isNightMode = false
 
     companion object {
-        private const val STYLE_URL = "https://demotiles.maplibre.org/style.json"
-        private const val NIGHT_STYLE_URL = "https://demotiles.maplibre.org/style.json" // placeholder
+        private val STYLE_URL = BuildConfig.MAP_STYLE_URL
+        private val NIGHT_STYLE_URL = BuildConfig.MAP_NIGHT_STYLE_URL
         private const val MAX_OFFLINE_SIZE_BYTES = 50L * 1024 * 1024 // 50MB
     }
 

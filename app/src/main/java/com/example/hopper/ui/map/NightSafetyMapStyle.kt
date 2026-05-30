@@ -1,5 +1,7 @@
 package com.example.hopper.ui.map
 
+import com.example.hopper.BuildConfig
+
 /**
  * Night Safety Mode map style configuration for MapLibre.
  * Provides a high-contrast dark style JSON for use when Night Safety Mode is active.
@@ -21,7 +23,7 @@ object NightSafetyMapStyle {
       "sources": {
         "openmaptiles": {
           "type": "vector",
-          "url": "https://demotiles.maplibre.org/tiles/tiles.json"
+          "url": "${BuildConfig.MAP_TILES_URL}"
         }
       },
       "layers": [
