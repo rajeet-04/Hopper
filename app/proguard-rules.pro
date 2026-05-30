@@ -18,4 +18,19 @@
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile
+-renamesourcefileattribute SourceFile
+
+
+# -----------------------------------------------------------------
+# 1. REMOVE LOGS (Saves Battery & CPU)
+# -----------------------------------------------------------------
+# This tells R8 that Log.d/v/i/w have no side effects and can be safely deleted.
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int d(...);
+    public static int i(...);
+    public static int w(...);
+    # We intentionally keep Log.e so you can still track crashes
+    # public static int e(...);
+}
