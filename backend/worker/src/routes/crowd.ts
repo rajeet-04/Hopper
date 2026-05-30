@@ -14,10 +14,7 @@ export async function handleCrowdGet(pandalId: string, env: Env): Promise<Respon
   }
 
   // Call the PostgreSQL function for weighted median calculation
-  const params = new URLSearchParams();
-  params.set('p_pandal_id', pandalId);
-
-  const response = await supabaseQuery(env, 'get_aggregated_crowd', params, {
+  const response = await supabaseQuery(env, 'get_aggregated_crowd', undefined, {
     method: 'POST',
     body: JSON.stringify({ p_pandal_id: pandalId }),
     rpc: true,
@@ -80,11 +77,7 @@ export async function handleCrowdPost(request: Request, env: Env): Promise<Respo
   }
 
   // Check DB-level rate limit (10 min per device per pandal)
-  const rateLimitParams = new URLSearchParams();
-  rateLimitParams.set('p_device_hash', deviceHash);
-  rateLimitParams.set('p_pandal_id', pandalId);
-
-  const rateLimitResp = await supabaseQuery(env, 'is_rate_limited', rateLimitParams, {
+  const rateLimitResp = await supabaseQuery(env, 'is_rate_limited', undefined, {
     method: 'POST',
     body: JSON.stringify({ p_device_hash: deviceHash, p_pandal_id: pandalId }),
     rpc: true,
