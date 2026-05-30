@@ -109,10 +109,10 @@ class MapLibreEngineController @Inject constructor(
             definition,
             byteArrayOf(),
             object : OfflineManager.CreateOfflineRegionCallback {
-                override fun onCreate(offlineRegion: org.maplibre.android.offline.OfflineRegion?) {
-                    offlineRegion?.setDownloadState(org.maplibre.android.offline.OfflineRegion.STATE_ACTIVE)
+                override fun onCreate(offlineRegion: org.maplibre.android.offline.OfflineRegion) {
+                    offlineRegion.setDownloadState(org.maplibre.android.offline.OfflineRegion.STATE_ACTIVE)
                 }
-                override fun onError(error: String?) {}
+                override fun onError(error: String) {}
             }
         )
     }
