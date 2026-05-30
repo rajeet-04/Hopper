@@ -16,3 +16,4 @@ local.properties
 
 .kiro/
 backend/worker/node_modules/
+node_modules/

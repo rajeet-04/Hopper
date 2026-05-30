@@ -9,6 +9,10 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+kotlin {
+    jvmToolchain(21)
+}
+
 // Load secrets from local.properties (gitignored)
 val localProperties = Properties()
 val localPropertiesFile = rootProject.file("local.properties")
@@ -90,8 +94,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     buildFeatures {
         compose = true
