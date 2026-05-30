@@ -31,7 +31,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Create `LocationUtils.kt` for coordinate helpers
     - _Requirements: 3.3, 5.3, 11.1_
 
-  - [ ]* 1.5 Write unit tests for HaversineCalculator and DeviceHashUtil
+  - [x]* 1.5 Write unit tests for HaversineCalculator and DeviceHashUtil
     - Test known coordinate pairs produce expected distances (±1m)
     - Test SHA-256 produces deterministic output for known input
     - Test edge cases: same point returns 0, antipodal points
@@ -47,7 +47,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Create `Converters.kt` type converter class for JSON arrays, enums, and timestamps
     - _Requirements: 8.1, 8.2, 8.3, 8.6_
 
-  - [~] 2.2 Create Room DAO interfaces
+  - [-] 2.2 Create Room DAO interfaces
     - Implement `PandalDao` with queries: getByFestivalAndYear, getById, getNearestPandals (ordered by lat/lng proximity), search
     - Implement `ExitNodeDao` with queries: getByCategory, getNearestByCategory
     - Implement `CrowdReportDao` with queries: getActiveReportsForPandal (non-expired), insert, getLatestByDeviceAndPandal (rate limit check), deleteExpired
@@ -56,7 +56,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Implement `LostPersonDao`, `OralHistoryDao`, `HeritageDao`, `ReputationDao`, `VolunteerDao`, `RitualGuideDao`
     - _Requirements: 8.1, 8.2, 5.5, 5.7_
 
-  - [~] 2.3 Create HopperDatabase and DatabaseModule
+  - [-] 2.3 Create HopperDatabase and DatabaseModule
     - Implement `HopperDatabase.kt` abstract class with all DAO accessors
     - Create `di/DatabaseModule.kt` Hilt module providing Room database singleton and all DAO instances
     - Configure Room with fallback to destructive migration for development
