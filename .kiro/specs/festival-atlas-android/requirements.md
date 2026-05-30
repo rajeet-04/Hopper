@@ -29,6 +29,13 @@ Hopper(Festival Atlas) is an offline-first Android application that serves as a 
 - **Source_Type**: A classification field indicating the origin of pandal data (committee, volunteer, news, or unknown), used to assess data trustworthiness
 - **Confidence_Level**: A three-tier rating (low, medium, high) indicating the reliability of a data entry based on its source and verification status
 - **Open_Data_Export**: The automated system that generates downloadable GeoJSON and CSV datasets of festival data under CC BY 4.0 license at the end of each festival season
+- **Lost_Person_Board**: The community bulletin board subsystem that allows users to broadcast their approximate location when separated from their group, with posts auto-expiring after 2 hours
+- **Oral_History_Vault**: The subsystem that stores and serves text snippets and audio recordings of cultural narratives from elder committee members, tagged to specific pandals
+- **Heritage_Layer**: A map overlay displaying French colonial landmarks and historical buildings in Chandannagar, available during Jagaddhatri Puja
+- **Reporter_Reputation**: The scoring system that tracks crowd report accuracy per device hash, awarding badges and increased report weight to consistently accurate reporters
+- **Volunteer_Module**: The subsystem that allows puja committees to post volunteer requirements and users to sign up for crowd management shifts
+- **Ritual_Guide**: The offline content module providing step-by-step ritual procedures, timing guides, and downloadable devotional audio for both festivals
+- **Live_API**: The public REST API serving real-time festival data to third-party developers and researchers during and after festival season
 
 ## Requirements
 
@@ -298,3 +305,99 @@ Hopper(Festival Atlas) is an offline-first Android application that serves as a 
 4. THE Backend SHALL serve Open_Data_Export files via a public download endpoint accessible without authentication
 5. THE Open_Data_Export SHALL include pandal locations, themes, artisan credits, awards, and committee information in every generated export
 6. WHEN a festival season concludes, THE Open_Data_Export SHALL generate and publish the new dataset within 7 days of the final immersion date
+
+### Requirement 22: Lost Person Bulletin Board
+
+**User Story:** As a family member separated from my group in a dense festival crowd, I want to broadcast my approximate location on a community board, so that nearby people or my group can find and assist me.
+
+#### Acceptance Criteria
+
+1. THE Lost_Person_Board SHALL allow users to post a lost-person bulletin containing a user-chosen display name and an auto-detected GPS location without requiring account creation or login
+2. WHEN a user submits a lost-person post, THE Lost_Person_Board SHALL auto-populate the location field using the device's current GPS coordinates
+3. THE Lost_Person_Board SHALL display all active lost-person posts to users within a 2-kilometer radius of each post's GPS coordinates
+4. THE Lost_Person_Board SHALL automatically expire and remove lost-person posts after 2 hours from the time of submission
+5. THE Lost_Person_Board SHALL not store any personally identifiable information beyond the user-chosen display name associated with each post
+6. WHEN a lost-person post is submitted without network connectivity, THE Lost_Person_Board SHALL queue the post locally and upload it when connectivity is restored via WorkManager
+7. THE Lost_Person_Board SHALL allow the original poster to manually mark their post as resolved before the 2-hour expiry
+
+### Requirement 23: Oral History Vault
+
+**User Story:** As a cultural preservation enthusiast, I want to access text narratives and audio recordings from elder committee members about pandal history and neighborhood lore, so that intangible cultural heritage is preserved digitally.
+
+#### Acceptance Criteria
+
+1. THE Oral_History_Vault SHALL store and serve text snippets from elder committee members containing narratives about pandal history and neighborhood lore, each tagged to a specific pandal and optionally a year
+2. THE Oral_History_Vault SHALL store audio recordings in MP3 format on object storage and link them by reference URL to their corresponding text entries in the application
+3. THE Oral_History_Vault SHALL accept community-submitted neighborhood lore entries tagged to specific pandal GPS coordinates
+4. WHEN a community member submits an oral history entry, THE Contributor_Portal SHALL hold the submission for moderation review before publishing the content to the live dataset
+5. WHEN an oral history entry has been downloaded by the user, THE Oral_History_Vault SHALL make that entry available offline from the Offline_Cache without requiring network connectivity
+6. THE Oral_History_Vault SHALL associate each entry with a specific pandal and optionally a historical year reference
+7. THE Oral_History_Vault SHALL display each entry with: title, contributor name, associated pandal name, year reference, text content, and an audio playback control where an audio recording exists
+
+### Requirement 24: Chandannagar Heritage Layer
+
+**User Story:** As a visitor to Chandannagar during Jagaddhatri Puja, I want to see historical buildings and French colonial landmarks on the map, so that I can explore the city's heritage alongside the festival.
+
+#### Acceptance Criteria
+
+1. WHILE Jagaddhatri Puja is selected in the Festival_Toggle, THE Heritage_Layer SHALL display a map overlay showing historical buildings and French colonial landmarks in Chandannagar as distinct map pins
+2. WHEN the user taps a heritage point pin, THE Hopper SHALL display a brief historical description of the landmark
+3. THE Heritage_Layer SHALL store each heritage point with: name, name in Bengali, GPS coordinates, brief description, historical period, and an optional photo
+4. THE Heritage_Layer SHALL store all heritage point data in the Offline_Cache for zero-network operation
+5. THE Heritage_Layer SHALL be available only when Jagaddhatri Puja is selected in the Festival_Toggle
+6. THE Heritage_Layer SHALL visually distinguish heritage point pins from pandal pins and Exit_Node pins using a unique icon and color scheme
+
+### Requirement 25: Crowd Reporter Reputation and Gamification
+
+**User Story:** As a frequent crowd reporter, I want to earn recognition for accurate reports, so that I am motivated to continue contributing reliable crowd data to the community.
+
+#### Acceptance Criteria
+
+1. THE Reporter_Reputation SHALL award a "Crowd Reporter" badge to devices that submit 10 or more crowd reports during a single festival season
+2. THE Reporter_Reputation SHALL calculate an accuracy score for each device by comparing each submitted report against the next 3 reports submitted by other devices for the same pandal within the report expiry window
+3. THE Reporter_Reputation SHALL display a community leaderboard during festival week showing top reporters by accuracy score, identified only by their badge tier and not by any personal identity
+4. WHEN a reporter's accuracy score exceeds a defined threshold, THE Crowd_Reporter SHALL apply increased weight to that reporter's crowd reports in the weighted median calculation
+5. THE Reporter_Reputation SHALL not award real prizes and SHALL function purely as community recognition
+6. THE Reporter_Reputation SHALL store reputation data locally per Device_Hash and synchronize to the backend when network connectivity is available
+
+### Requirement 26: Volunteer Coordination Module
+
+**User Story:** As a puja committee organizer, I want to post volunteer requirements and receive sign-ups through the app, so that I can coordinate crowd management shifts without relying on informal communication channels.
+
+#### Acceptance Criteria
+
+1. THE Volunteer_Module SHALL allow puja committees to post volunteer requirements via the Contributor_Portal specifying: role description, location, date, time slot, and number of volunteers needed
+2. THE Volunteer_Module SHALL allow users to sign up for volunteer shifts via the Android app by providing a name and phone number without requiring account creation
+3. WHEN a user signs up for a volunteer shift, THE Volunteer_Module SHALL add the volunteer's name and phone number to a list accessible only to the posting committee
+4. THE Volunteer_Module SHALL automatically expire volunteer posts after the specified shift time passes
+5. THE Volunteer_Module SHALL not display volunteer contact information publicly and SHALL restrict access to the posting committee only
+6. THE Volunteer_Module SHALL display volunteer posts only for the relevant festival and year as determined by the active Festival_Toggle and Year context
+7. WHEN a volunteer post reaches its required number of sign-ups, THE Volunteer_Module SHALL mark the post as filled and stop accepting new sign-ups
+
+### Requirement 27: Ritual Guide and Audio Library
+
+**User Story:** As a devotee, I want step-by-step ritual guides and downloadable devotional audio, so that I can participate in rituals correctly and listen to mantras offline during the festival.
+
+#### Acceptance Criteria
+
+1. THE Ritual_Guide SHALL provide step-by-step guides for: Anjali (offering) timings and procedure, Sandhi Puja (the exact 48-minute window between Ashtami and Navami), Dhunuchi Naach, Sindoor Khela, and Bishorjon viewing etiquette
+2. THE Ritual_Guide SHALL provide offline downloadable audio content including: Durga Saptashati excerpts (recitation guides), Jagaddhatri Dhyan Mantra, and Mahalaya audio notification
+3. THE Ritual_Guide SHALL make all ritual text content and downloaded audio files available offline without requiring network connectivity
+4. THE Ritual_Guide SHALL provide all ritual content in both Bengali and English
+5. THE Ritual_Guide SHALL store audio files on object storage and cache them locally on the device after first download
+6. THE Ritual_Guide SHALL link each ritual guide entry to the relevant tithi in the festival calendar so that users can access the appropriate guide from the calendar view
+7. WHEN the user downloads an audio file, THE Ritual_Guide SHALL store the file in the Offline_Cache and indicate download status with a visual indicator
+
+### Requirement 28: Live Public REST API
+
+**User Story:** As a third-party developer or news outlet, I want to query a live public API for real-time pandal data, crowd levels, and calendar information during the festival, so that I can build integrations and provide coverage without scraping the app.
+
+#### Acceptance Criteria
+
+1. THE Live_API SHALL provide a public REST API at data.festivalatlas.org serving live access to pandal data, crowd levels, calendar information, and artisan information
+2. THE Live_API SHALL expose the following endpoints: GET /api/v1/pandals, GET /api/v1/pandals/{id}/history, GET /api/v1/artists, GET /api/v1/crowd with pandal_id query parameter, and GET /api/v1/calendar
+3. THE Live_API SHALL enforce rate limits of 100 requests per day for anonymous access and 10,000 requests per day for registered researchers
+4. THE Live_API SHALL return responses in clean JSON format
+5. THE Live_API SHALL provide API documentation via a Swagger/OpenAPI specification
+6. THE Live_API SHALL not require authentication for read-only public data access and SHALL enforce rate limits by IP address
+7. THE Live_API SHALL serve data during festival season for live information and year-round for historical data access
