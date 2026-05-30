@@ -194,8 +194,8 @@ This plan implements the offline-first Android festival navigation app using Cle
 - [x] 8. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 9. Domain use cases
-  - [ ] 9.1 Implement core navigation use cases
+- [x] 9. Domain use cases
+  - [x] 9.1 Implement core navigation use cases
     - Create `GetNearestPandalsUseCase` combining PandalRepository with LocationProvider and FestivalToggleController
     - Create `GetExitRoutesUseCase` combining ExitRouterRepository with LocationProvider
     - Create `SubmitCrowdReportUseCase` with DeviceHashUtil and rate limit enforcement
@@ -203,14 +203,14 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Create `ToggleFestivalUseCase` for switching festival context
     - _Requirements: 3.1, 4.2, 5.1, 14.1, 14.2, 2.2_
 
-  - [ ] 9.2 Implement feature-specific use cases
+  - [x] 9.2 Implement feature-specific use cases
     - Create `GetLightTrailUseCase` (only returns data when Jagaddhatri Puja active)
     - Create `ProcessionTrackerUseCase` with observe, report, and ETA methods
     - Create `GetBhogPinsUseCase` and `SubmitBhogReportUseCase`
     - Create `GetPredictiveWaitTimesUseCase` with heat timeline generation and peak summary
     - _Requirements: 15.1, 16.1, 16.3, 17.1, 18.1_
 
-  - [ ] 9.3 Implement community feature use cases
+  - [x] 9.3 Implement community feature use cases
     - Create `SubmitLostPersonPostUseCase` and `GetNearbyLostPersonPostsUseCase` (2km radius filter)
     - Create `GetOralHistoriesUseCase` and `DownloadOralHistoryAudioUseCase`
     - Create `GetHeritagePointsUseCase` (only returns data when Jagaddhatri Puja active)
@@ -230,43 +230,43 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 23: Heritage layer festival-conditional visibility** — verify empty results when Durga Puja active
     - **Validates: Requirements 22.3, 22.4, 22.5, 22.7, 24.1, 24.5**
 
-- [ ] 10. Repository layer - extended features
-  - [ ] 10.1 Implement LightTrailRepository
+- [x] 10. Repository layer - extended features
+  - [x] 10.1 Implement LightTrailRepository
     - Create interface and implementation for light trail data queries
     - Filter by festival (Jagaddhatri Puja only) and year
     - Return ordered stops with route polyline
     - _Requirements: 15.1, 15.2, 15.3, 15.5_
 
-  - [ ] 10.2 Implement BishorjonRepository
+  - [x] 10.2 Implement BishorjonRepository
     - Create interface and implementation for procession tracking
     - Implement `getActiveProcessions()` as Flow, `submitProcessionReport()`, `expireStaleProcessionReports()` (15-min expiry)
     - Implement offline fallback with `getLastKnownProcessions()`
     - _Requirements: 16.1, 16.5, 16.6, 16.7_
 
-  - [ ] 10.3 Implement BhogRepository
+  - [x] 10.3 Implement BhogRepository
     - Create interface and implementation for bhog/food pin management
     - Implement category filtering, distance calculation from user, expiry logic (`min(endTime, reportedAt + 2h)`)
     - Implement report submission with offline queuing
     - _Requirements: 17.1, 17.2, 17.3, 17.4, 17.5, 17.6, 17.7_
 
-  - [ ] 10.4 Implement LostPersonRepository
+  - [x] 10.4 Implement LostPersonRepository
     - Create interface and implementation for lost person bulletin board
     - Implement 2km radius filtering using Haversine, 2-hour auto-expiry, post resolution
     - Implement offline queuing for submissions
     - _Requirements: 22.1, 22.2, 22.3, 22.4, 22.5, 22.6, 22.7_
 
-  - [ ] 10.5 Implement OralHistoryRepository
+  - [x] 10.5 Implement OralHistoryRepository
     - Create interface and implementation for oral history entries
     - Implement audio download and local caching in `filesDir/oral_history/`
     - Track `isAudioCachedLocally` flag
     - _Requirements: 23.1, 23.2, 23.5, 23.6, 23.7_
 
-  - [ ] 10.6 Implement HeritageRepository
+  - [x] 10.6 Implement HeritageRepository
     - Create interface and implementation for heritage points
     - Filter by festival (Jagaddhatri Puja only)
     - _Requirements: 24.1, 24.2, 24.3, 24.4, 24.5_
 
-  - [ ] 10.7 Implement ReputationRepository
+  - [x] 10.7 Implement ReputationRepository
     - Create interface and implementation for reporter reputation
     - Implement accuracy scoring algorithm (compare against next 3 reports from other devices)
     - Implement badge tier calculation (BRONZE: 10+, SILVER: 25+ & 60%, GOLD: 50+ & 80%)
@@ -274,12 +274,12 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Implement leaderboard query (badge tier, accuracy, count only — no identity)
     - _Requirements: 25.1, 25.2, 25.3, 25.4, 25.5, 25.6_
 
-  - [ ] 10.8 Implement VolunteerRepository
+  - [x] 10.8 Implement VolunteerRepository
     - Create interface and implementation for volunteer post management
     - Implement sign-up with encrypted contact storage, filled-status check, expiry logic
     - _Requirements: 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7_
 
-  - [ ] 10.9 Implement RitualGuideRepository
+  - [x] 10.9 Implement RitualGuideRepository
     - Create interface and implementation for ritual guides and audio assets
     - Implement audio download/caching in `filesDir/ritual_audio/`
     - Implement tithi linkage queries
@@ -303,28 +303,28 @@ This plan implements the offline-first Android festival navigation app using Cle
 - [ ] 11. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 12. Map engine integration
-  - [ ] 12.1 Implement MapEngineController interface and MapLibre wrapper
+- [x] 12. Map engine integration
+  - [x] 12.1 Implement MapEngineController interface and MapLibre wrapper
     - Create `MapEngineController` interface with all methods per design (pandal pins, exit nodes, route polylines, overlays)
     - Implement MapLibre GL Native wrapper using Compose `AndroidView`
     - Implement `loadOfflineRegion()` for tile caching (Kolkata, Chandannagar, Krishnanagar bounds, zoom 10-16, <50MB)
     - Implement `setGeoJsonSource()` for dynamic layer management
     - _Requirements: 1.1, 1.2, 1.3_
 
-  - [ ] 12.2 Implement offline tile management
+  - [x] 12.2 Implement offline tile management
     - Configure `OfflineManager` with `OfflineTilePyramidRegionDefinition` for each city zone
     - Implement tile download on first launch or when network available
     - Implement silent background refresh via WorkManager when connectivity restores
     - _Requirements: 1.3, 1.5, 8.4_
 
-  - [ ] 12.3 Implement Graceful Degradation view
+  - [x] 12.3 Implement Graceful Degradation view
     - Create `GracefulDegradationView.kt` compass/radar composable showing directional indicators to nearest pandals and exits
     - Implement automatic switch when tile loading fails completely
     - Implement automatic transition back to full map when tiles become available
     - Display pandal names, distances, and crowd indicators in list format alongside compass
     - _Requirements: 1.4, 12.1, 12.2, 12.3, 12.4_
 
-  - [ ] 12.4 Implement Night Safety Mode map styling
+  - [x] 12.4 Implement Night Safety Mode map styling
     - Create dark high-contrast map style JSON for MapLibre
     - Implement `setNightSafetyStyle()` toggle
     - Increase visual weight of Police/Medical exit node pins in night mode
@@ -335,8 +335,8 @@ This plan implements the offline-first Android festival navigation app using Cle
     - **Property 10: Night safety route preference** — verify well-lit routes preferred over shorter unlit routes when Night Safety Mode active
     - **Validates: Requirements 7.2**
 
-- [ ] 13. UI layer - Map screen and core navigation
-  - [ ] 13.1 Implement MapScreen and MapViewModel
+- [x] 13. UI layer - Map screen and core navigation
+  - [x] 13.1 Implement MapScreen and MapViewModel
     - Create `MapScreen.kt` with MapLibre map view, pandal pins, exit node pins, user location marker
     - Create `MapViewModel.kt` managing map state, pin data, festival context, and night mode toggle
     - Implement persistent "Get Me Out" button overlay accessible with single tap
@@ -344,14 +344,14 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Wire location updates to map centering
     - _Requirements: 1.1, 1.2, 2.1, 2.2, 4.1_
 
-  - [ ] 13.2 Implement NearMeScreen and NearMeViewModel
+  - [x] 13.2 Implement NearMeScreen and NearMeViewModel
     - Create `NearMeScreen.kt` displaying nearest pandals sorted by composite score
     - Show each entry with: name, distance (meters), crowd bucket indicator, theme description
     - Implement auto-recalculation when location changes by >100m
     - Display minimum 5 nearest pandals
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-  - [ ] 13.3 Implement PandalDetailSheet and PandalDetailViewModel
+  - [x] 13.3 Implement PandalDetailSheet and PandalDetailViewModel
     - Create `PandalDetailSheet.kt` bottom sheet with: theme, committee name, established year, artisan credits, photo gallery (horizontal scroll, up to 10), awards section, archive timeline stub
     - Implement data provenance indicator (Committee Verified vs Community Sourced)
     - Implement confidence level badge (low/medium/high)
@@ -359,29 +359,29 @@ This plan implements the offline-first Android festival navigation app using Cle
     - All content rendered from offline cache
     - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 20.3, 20.6_
 
-  - [ ] 13.4 Implement ExitRouterSheet and ExitRouterViewModel
+  - [x] 13.4 Implement ExitRouterSheet and ExitRouterViewModel
     - Create `ExitRouterSheet.kt` bottom sheet showing nearest exit node per category (Metro, Railway, Police, Medical)
     - Display walking distance and estimated time for each option
     - Show route polyline on map when user selects an exit
     - Implement alternate route display
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6_
 
-  - [ ] 13.5 Implement CrowdReportSheet and CrowdReportViewModel
+  - [x] 13.5 Implement CrowdReportSheet and CrowdReportViewModel
     - Create `CrowdReportSheet.kt` with 3 selectable crowd buckets (green/yellow/red)
     - Ensure complete submission in ≤3 taps from map screen
     - Show current reporter badge tier on submission sheet
     - Display rate limit feedback if reporting too frequently
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.7_
 
-- [ ] 14. UI layer - Calendar and Itinerary
-  - [ ] 14.1 Implement CalendarScreen and CalendarViewModel
+- [x] 14. UI layer - Calendar and Itinerary
+  - [x] 14.1 Implement CalendarScreen and CalendarViewModel
     - Create `CalendarScreen.kt` displaying complete festival calendar with tithi dates
     - Highlight current tithi and peak crowd days (Ashtami, Navami) with visual emphasis
     - Display each tithi with name, date, and cultural significance in Bengali and English
     - Show "Ritual Guide" chip on tithis with linked guides
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 27.6_
 
-  - [ ] 14.2 Implement ItineraryScreen and ItineraryViewModel
+  - [x] 14.2 Implement ItineraryScreen and ItineraryViewModel
     - Create `ItineraryScreen.kt` with pandal selection (5-10 pandals), route display, and stop list
     - Display each stop with: sequence number, pandal name, distance from previous, estimated arrival, crowd indicator
     - Show total walking distance (km) and total time (minutes)
@@ -389,7 +389,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Save itinerary to offline cache
     - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7_
 
-  - [ ] 14.3 Implement HeatTimelineBar component
+  - [x] 14.3 Implement HeatTimelineBar component
     - Create `HeatTimelineBar.kt` composable showing hourly crowd predictions (6PM-2AM range)
     - Color segments by predicted CrowdBucket (green/yellow/red)
     - Highlight current hour with marker
@@ -400,8 +400,8 @@ This plan implements the offline-first Android festival navigation app using Cle
 - [ ] 15. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 16. UI layer - Jagaddhatri Puja features
-  - [ ] 16.1 Implement LightTrailScreen and LightTrailViewModel
+- [x] 16. UI layer - Jagaddhatri Puja features
+  - [x] 16.1 Implement LightTrailScreen and LightTrailViewModel
     - Create `LightTrailScreen.kt` full-screen map with trail overlay, sequential stop markers, route polyline
     - Display each installation with: artist name, dimensions, theme description
     - Mark vantage points with viewing-angle indicator arcs
@@ -409,7 +409,7 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Only available when Jagaddhatri Puja is active festival
     - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7_
 
-  - [ ] 16.2 Implement BishorjonTrackerSheet and BishorjonTrackerViewModel
+  - [x] 16.2 Implement BishorjonTrackerSheet and BishorjonTrackerViewModel
     - Create `BishorjonTrackerSheet.kt` bottom sheet with active processions list, ETA display, report button (≤3 taps)
     - Implement animated polylines with directional arrows on map
     - Implement proximity alert logic: audio + vibration when procession within 500m
@@ -417,22 +417,22 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Display last-known positions when offline
     - _Requirements: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7_
 
-  - [ ] 16.3 Implement HeritageDetailSheet and HeritageViewModel
+  - [x] 16.3 Implement HeritageDetailSheet and HeritageViewModel
     - Create `HeritageDetailSheet.kt` bottom sheet with heritage point details (name, description, period, photo)
     - Implement heritage layer toggle in map toolbar
     - Use distinct icon/color (sepia/brown monument icon) for heritage pins
     - Only render when Jagaddhatri Puja is active
     - _Requirements: 24.1, 24.2, 24.3, 24.4, 24.5, 24.6_
 
-- [ ] 17. UI layer - Community features
-  - [ ] 17.1 Implement BhogFinderSheet and BhogFinderViewModel
+- [x] 17. UI layer - Community features
+  - [x] 17.1 Implement BhogFinderSheet and BhogFinderViewModel
     - Create `BhogFinderSheet.kt` bottom sheet with category toggle (Bhog Distribution / Street Food)
     - Display pin list sorted by distance with: name, committee/description, time, rating
     - Implement quick-report button (≤3 taps)
     - Show distance from user on each pin
     - _Requirements: 17.1, 17.2, 17.3, 17.4, 17.5, 17.6, 17.7_
 
-  - [ ] 17.2 Implement LostPersonBoardSheet and LostPersonBoardViewModel
+  - [x] 17.2 Implement LostPersonBoardSheet and LostPersonBoardViewModel
     - Create `LostPersonBoardSheet.kt` bottom sheet with "Post My Location" button and active posts list sorted by distance
     - Auto-populate location from GPS
     - Display posts within 2km radius
@@ -441,27 +441,27 @@ This plan implements the offline-first Android festival navigation app using Cle
     - No account creation required
     - _Requirements: 22.1, 22.2, 22.3, 22.4, 22.5, 22.6, 22.7_
 
-  - [ ] 17.3 Implement OralHistoryScreen and OralHistoryViewModel
+  - [x] 17.3 Implement OralHistoryScreen and OralHistoryViewModel
     - Create `OralHistoryScreen.kt` list screen with: title, contributor, year, text preview, audio playback button
     - Implement audio playback using MediaPlayer (streaming when online, local when cached)
     - Implement download button with progress indicator for offline caching
     - Show offline availability indicator (cloud icon / checkmark)
     - _Requirements: 23.1, 23.2, 23.5, 23.6, 23.7_
 
-  - [ ] 17.4 Implement LeaderboardScreen and LeaderboardViewModel
+  - [x] 17.4 Implement LeaderboardScreen and LeaderboardViewModel
     - Create `LeaderboardScreen.kt` displaying community leaderboard with badge tiers, accuracy scores, report counts
     - No personal identity exposed — only badge tier, accuracy, and count
     - Show current device's reputation status
     - _Requirements: 25.1, 25.2, 25.3, 25.5_
 
-  - [ ] 17.5 Implement VolunteerScreen and VolunteerViewModel
+  - [x] 17.5 Implement VolunteerScreen and VolunteerViewModel
     - Create `VolunteerScreen.kt` list screen with: role, location, date, time, spots remaining
     - Implement sign-up flow (name + phone number, no account required)
     - Show filled status, hide contact info from public view
     - Filter by active festival/year
     - _Requirements: 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7_
 
-  - [ ] 17.6 Implement RitualGuideScreen and RitualGuideViewModel
+  - [x] 17.6 Implement RitualGuideScreen and RitualGuideViewModel
     - Create `RitualGuideScreen.kt` with expandable step-by-step instructions, timing notes, linked audio
     - Implement audio download and playback with progress indicator
     - Show all content in Bengali and English
@@ -478,8 +478,8 @@ This plan implements the offline-first Android festival navigation app using Cle
 - [ ] 18. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 19. Background sync and WorkManager
-  - [ ] 19.1 Implement DataSyncWorker
+- [x] 19. Background sync and WorkManager
+  - [x] 19.1 Implement DataSyncWorker
     - Create `DataSyncWorker.kt` CoroutineWorker for periodic background sync
     - Implement stale-while-revalidate: check `If-Modified-Since` / `ETag` headers
     - Sync pandal data, exit node data, crowd aggregations
@@ -488,46 +488,46 @@ This plan implements the offline-first Android festival navigation app using Cle
     - Schedule as periodic work (15-minute minimum interval)
     - _Requirements: 1.5, 8.4, 8.5_
 
-  - [ ] 19.2 Implement CrowdUploadWorker
+  - [x] 19.2 Implement CrowdUploadWorker
     - Create `CrowdUploadWorker.kt` for uploading queued crowd reports when connectivity restores
     - Query Room for `isSynced=false` reports, upload, mark as synced
     - _Requirements: 5.4_
 
-  - [ ] 19.3 Implement feature-specific sync workers
+  - [x] 19.3 Implement feature-specific sync workers
     - Create `BhogUploadWorker.kt` for queued bhog/food reports
     - Create `ProcessionUploadWorker.kt` for queued procession sighting reports
     - Create `LostPersonUploadWorker.kt` for queued lost person posts
     - Create `VolunteerSyncWorker.kt` for volunteer data sync
     - _Requirements: 16.7, 17.6, 22.6_
 
-  - [ ] 19.4 Configure WorkManager scheduling in Hilt module
+  - [x] 19.4 Configure WorkManager scheduling in Hilt module
     - Create WorkManager Hilt module with worker factories
     - Schedule all periodic and one-time workers with appropriate constraints
     - Ensure unique work names prevent duplicate scheduling
     - _Requirements: 8.4_
 
-- [ ] 20. Navigation and app wiring
-  - [ ] 20.1 Implement Jetpack Navigation Compose graph
+- [x] 20. Navigation and app wiring
+  - [x] 20.1 Implement Jetpack Navigation Compose graph
     - Create navigation graph with routes for: Map, NearMe, Calendar, Itinerary, LightTrail, OralHistory, Leaderboard, Volunteer, RitualGuide
     - Implement bottom navigation bar with primary destinations
     - Implement deep link support for pandal detail and calendar views
     - Wire all screens to navigation controller
     - _Requirements: 1.1, 2.1_
 
-  - [ ] 20.2 Wire MainActivity with Hilt and theme
+  - [x] 20.2 Wire MainActivity with Hilt and theme
     - Update `MainActivity.kt` with `@AndroidEntryPoint` annotation
     - Set content to `HopperTheme` wrapping navigation graph
     - Implement language toggle in settings/toolbar
     - Implement Night Safety Mode toggle with automatic sunset detection
     - _Requirements: 7.1, 7.4, 10.1_
 
-  - [ ] 20.3 Implement data expiry and cleanup scheduling
+  - [x] 20.3 Implement data expiry and cleanup scheduling
     - Create periodic cleanup job for: expired crowd reports (20 min), expired procession reports (15 min), expired bhog pins, expired lost person posts (2 hours), expired volunteer posts
     - Schedule via WorkManager or coroutine scope on app launch
     - _Requirements: 5.5, 16.6, 17.2, 22.4, 26.4_
 
-- [ ] 21. Remote API service layer (post-MVP prep)
-  - [ ] 21.1 Implement HopperApiService with Retrofit
+- [x] 21. Remote API service layer (post-MVP prep)
+  - [x] 21.1 Implement HopperApiService with Retrofit
     - Create `HopperApiService.kt` Retrofit interface with endpoints matching Live API spec
     - Define DTOs for API responses (pandals, crowd, calendar, artists)
     - Configure base URL, JSON serialization, and timeout (10s)
