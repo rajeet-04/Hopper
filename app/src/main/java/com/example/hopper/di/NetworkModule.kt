@@ -18,7 +18,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://api.festivalatlas.example/"
+    // TODO: Replace with your deployed Cloudflare Worker URL
+    // e.g., "https://hopper-api.<your-subdomain>.workers.dev/"
+    private const val BASE_URL = "https://hopper-api.your-subdomain.workers.dev/"
 
     @Provides
     @Singleton

@@ -23,11 +23,24 @@ android {
         versionName = "0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Load secrets from local.properties (gitignored)
+        val localProperties = java.util.Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localProperties.load(localPropertiesFile.inputStream())
+        }
+
+        buildConfigField("String", "API_BASE_URL", "\"${localProperties.getProperty("api.base.url", "")}\"")
+        buildConfigField("String", "MAP_STYLE_URL", "\"${localProperties.getProperty("map.style.url", "")}\"")
+        buildConfigField("String", "MAP_NIGHT_STYLE_URL", "\"${localProperties.getProperty("map.night.style.url", "")}\"")
+        buildConfigField("String", "MAP_TILES_URL", "\"${localProperties.getProperty("map.tiles.url", "")}\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -35,12 +48,50 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+
+    // Split APK by ABI — eliminates unused native libs per device
+    // arm64-v8a alone drops ~20MB of x86/armv7 MapLibre .so files
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("arm64-v8a", "armeabi-v7a")
+            isUniversalApk = true // Keep a universal fallback
+        }
+    }
+
+    // Strip native debug symbols
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false // Compress native libs in APK
+        }
+        resources {
+            excludes += setOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
+                "META-INF/NOTICE.md",
+                "META-INF/*.kotlin_module",
+                "META-INF/versions/**",
+                "kotlin/**",
+                "DebugProbesKt.bin",
+                "kotlin-tooling-metadata.json"
+            )
+        }
+    }
+
+    // Enable Android App Bundle for Play Store (even smaller per-device)
+    bundle {
+        abi { enableSplit = true }
+        language { enableSplit = true }
+        density { enableSplit = true }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     testOptions {
         unitTests.isReturnDefaultValues = true
