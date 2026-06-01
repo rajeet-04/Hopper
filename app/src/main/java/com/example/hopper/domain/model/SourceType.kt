@@ -6,6 +6,7 @@ package com.example.hopper.domain.model
  */
 enum class SourceType {
     COMMITTEE,
+    COMMUNITY,
     VOLUNTEER,
     NEWS,
     UNKNOWN
